@@ -1,0 +1,98 @@
+$primary_background:#fff;
+$secondary_color:#202842;
+$button_backgroung :#00828c;
+
+$main-background:liner-gradient(105deg,$button_backgroung 45%,$primary_background 45% ,$primary_background 100%);
+$mobile_background:liner-gradient(0deg, #c7082b 45%, #c7082b 45%, #6300BE 100%);
+$input_border_color:#DCDFF1;
+$placeholder_color:#5D698D;
+$box_shadow_one:0px 8px 15px rgba(0,0,0,0.1);
+$box_shadow_two:0px 10px 20px rgba(43,20,11,0.315);
+$inputwidth:340px;
+
+@mixin displayCenter{
+    display: grid;
+    place-items: center;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.signup-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  
+
+    .back{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        text-decoration: none;
+        margin-top:0.3%; 
+    }
+.login-btn,
+.signup-btn{
+    padding: 0.8em 3.5em;
+    margin-top: 3%;
+    text-transform: uppercase;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: $box_shadow_one;
+    background-color: $button_backgroung;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+    color: #fff;
+    width: $inputwidth;
+
+    &:hover{
+        box-shadow: $box_shadow_two;
+        transition: all .3s ease-in-out 0s;
+        transform: translateY(-2px);
+         background-color: $primary_background;
+         color: $button_backgroung;
+
+        
+    }
+}
+form{
+
+ 
+    input{
+        padding: 10px 20px;
+        width:$inputwidth;
+        border-radius: 3px;
+        border: 2px solid $input_border_color;
+        margin: 10px 0px;
+        &::placeholder{
+            font-size: 12px;
+            color: $placeholder_color;
+
+        }
+    }
+  .title {
+        width: 100%;
+        padding: 12px 20px;
+        margin-bottom: 8px;
+        box-sizing: border-box;
+        border: none;
+        background-color:darkcyan;
+        color: $primary_background;
+    }
+ 
+}
+}
