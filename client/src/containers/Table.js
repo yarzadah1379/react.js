@@ -23,18 +23,18 @@ return(
               
                 <tbody>
                    
-            <tr >
-            {isLoading ? 'loading' :users.map((user)=>(
-                <>
+           
+            {isLoading ? 'loading' :users.map((user,index)=>(
+                <tr > 
                 <td key={user._id}></td>
-                <td>{user._id}</td>
+                <td>{}</td>
                 <td>{user.name}</td>
                 <td>{user.lname}</td>
                  <td>{user.email}</td>
-
-                </>
+                 </tr>
+                
             ))}
-            </tr>
+           
                   
                 </tbody>
             </table>
