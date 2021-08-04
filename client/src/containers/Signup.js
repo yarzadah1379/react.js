@@ -1,7 +1,14 @@
 import React from "react";
 import axios from "axios";
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation,useQueryClient } from "react-query";
+
+import {Link} from 'react-router-dom'
+
 import { useForm } from "react-hook-form";
+import './main.scss'
+
+
+
 
 const createUser = async (user) => {
   const { data } = await axios.post("http://localhost:4000/api/user", user);
@@ -14,15 +21,12 @@ function useCreateUser() {
 
   return createUserMutation.mutateAsync
 }
-
-
-
 function Signup() {
   const queryClient = useQueryClient()
+
  
   const { handleSubmit, register,errors } = useForm();
 
-  
   const createUser = useCreateUser();
 
   function onSubmit(values) {
@@ -53,21 +57,36 @@ function Signup() {
       }
     })
   }
-
   return (
-    <div className="signup-container">
-  
- <form onSubmit={handleSubmit(onSubmit)}>
-      <input  {...register("name")} />
-      
-      <input {...register("lname")} />
-      <input {...register("email")} />
-      <input {...register("password")} />
+    <div className='signup-container'>
+    <form onSubmit={handleSubmit(onSubmit)}>
+    <Link to='/' className='back' ><li> Back</li></Link>
+      <div className='name-inputs'>
+      <div >
+       <h3 className='title'>Logint</h3>
+       </div>
+       <div>
+       <input  {...register("name")} className='name'  placeholder='Your name' />
+       </div>
+       <div>
+       <input {...register("lname")} className='lname'  placeholder='Your lastName'/>
 
+       </div>
       
-      <input type="submit" />
+       <div>
+         <input {...register("email")}  placeholder='Your Email' className='email' />
+
+       </div>
+       <div >
+         <input {...register("password")}  placeholder='Your password' className='password' />
+
+       </div>
+
+
+      </div>
+      <button type='submit' className='signup-btn'>Log In</button>
     </form>
-    </div>
+</div>
   );
 }
 export default Signup;

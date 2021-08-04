@@ -11,6 +11,12 @@ body {
     width: 90%;
     border-collapse: collapse;
     margin: auto;
+    caption{
+        margin: 2% 0%;
+        font-size: 26px;
+        color: #aec9e4;
+        font-weight: lighter;
+    }
   
     thead {
         border-top: 2px solid $lfs-yellow;

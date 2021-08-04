@@ -1,16 +1,18 @@
 .navbar{
-    background-color: rgb(8, 8, 201);
+    background-color: darkcyan;
     padding: 2rem 4rem;
     height: 5rem;
-    box-shadow: 0 0.2rem rgba(0,0,0,0.4);
+    box-shadow: 0 0.2rem rgba(241, 236, 236, 0.4);
+    
 
     &__list {
         display: flex;
-        justify-content: space-between;
+        justify-content:flex-end;
         align-items: center;
         list-style: none;
         height: 100%;
         padding: 0 4rem;
+       
 
 
         &__item{
@@ -23,17 +25,12 @@
     }
     &__link{
         color: white;
+        margin-right: 30px;
         text-decoration: none;
 
         &:hover{
-            color: #777;
+            color: rgb(221, 39, 39);
         }
     }
-    &__logo{
-        font-size: 2.8rem;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        font-style: italic;
-    }
+
 }

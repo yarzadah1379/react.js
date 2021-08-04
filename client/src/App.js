@@ -1,35 +1,42 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-import {
+import {BrowserRouter as Router,Route} from 'react-router-dom'
  
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
-
-
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Layout from './hocs/Layout';
 import Login from './containers/Login'
 import Signup from './containers/Signup'
 import Edit from './containers/Edit'
 import Table from './containers/Table'
 
+
 import './sass/main.scss'
-const queryClient = new QueryClient()
 
 function App() {
+
+  const [userId,setUserId]=useState();
   return (
- <QueryClientProvider client={queryClient}>
      <Router>
      <Layout>
       <Route exact  path='/'  component={Login}/>
       <Route   path='/signup'  component={Signup}/>
-      <Route   path='/edit'  component={Edit}/>
-      <Route   path='/table'  component={Table}/>
+
+
+      <Route   path='/edit/:id'  />
+
+      
+      <Route   path='/table' 
+      render={(props) =>(
+        <Table   {...props} setUserId={setUserId}/>
+      )}
+   
+      
+      />
+
+
+      
 
      </Layout>
      </Router>
-     </QueryClientProvider>
   );
 }
 
